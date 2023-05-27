@@ -85,6 +85,7 @@
 
       setTimeout(function() {
         downloadZip(button.dataset.filename);
+        button.style.display = 'none'; // Esconde o botão após o download iniciar
       }, count * 1000);
     }
 
@@ -109,23 +110,31 @@
     <ul id="file-list">
       <li>
         <a href="#">QUICKAI-CMS-3.3.1.zip</a>
-        <button class="download-button" data-filename="QUICKAI-CMS-3.3.1.zip" data-seconds="10" disabled>Download</button>
-        <span class="timer"></span>
+        <div>
+          <button class="download-button" data-filename="QUICKAI-CMS-3.3.1.zip" data-seconds="10">Libere o Download</button>
+          <span class="timer"></span>
+        </div>
       </li>
       <li>
         <a href="#">QUICKAI-CMS-3.3.2.zip</a>
-        <button class="download-button" data-filename="QUICKAI-CMS-3.3.2.zip" data-seconds="15" disabled>Download</button>
-        <span class="timer"></span>
+        <div>
+          <button class="download-button" data-filename="QUICKAI-CMS-3.3.2.zip" data-seconds="15">Libere o Download</button>
+          <span class="timer"></span>
+        </div>
       </li>
       <li>
         <a href="#">QUICKAI-CMS-3.4.0.zip</a>
-        <button class="download-button" data-filename="QUICKAI-CMS-3.4.0.zip" data-seconds="20" disabled>Download</button>
-        <span class="timer"></span>
+        <div>
+          <button class="download-button" data-filename="QUICKAI-CMS-3.4.0.zip" data-seconds="20">Libere o Download</button>
+          <span class="timer"></span>
+        </div>
       </li>
       <li>
         <a href="#">QUICKAI-CMS-3.5.0.zip</a>
-        <button class="download-button" data-filename="QUICKAI-CMS-3.5.0.zip" data-seconds="25" disabled>Download</button>
-        <span class="timer"></span>
+        <div>
+          <button class="download-button" data-filename="QUICKAI-CMS-3.5.0.zip" data-seconds="25">Libere o Download</button>
+          <span class="timer"></span>
+        </div>
       </li>
       <!-- Adicione mais itens da lista conforme necessário -->
     </ul>
