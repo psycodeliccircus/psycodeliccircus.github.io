@@ -41,7 +41,7 @@
       text-decoration: none;
     }
 
-    button {
+    .download-button {
       background-color: #4CAF50;
       color: white;
       border: none;
@@ -55,8 +55,13 @@
       transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #45a049;
+    .download-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .timer {
+      font-size: 12px;
     }
   </style>
 </head>
@@ -65,15 +70,52 @@
     <h1>Lista de Arquivos</h1>
 
     <ul>
-      <li><a href="QUICKAI-CMS-3.3.1.zip">QUICKAI-CMS-3.3.1.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.1.zip')">Download</button></li>
-      <li><a href="QUICKAI-CMS-3.3.2.zip">QUICKAI-CMS-3.3.2.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.2.zip')">Download</button></li>
-      <li><a href="QUICKAI-CMS-3.4.0.zip">QUICKAI-CMS-3.4.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.4.0.zip')">Download</button></li>
-      <li><a href="QUICKAI-CMS-3.5.0.zip">QUICKAI-CMS-3.5.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.5.0.zip')">Download</button></li>
+      <li>
+        <a>QUICKAI-CMS-3.3.1.zip</a>
+        <button class="download-button" onclick="startDownload(this, 'QUICKAI-CMS-3.3.1.zip', 10)">Download</button>
+        <span class="timer"></span>
+      </li>
+      <li>
+        <a>QUICKAI-CMS-3.3.2.zip</a>
+        <button class="download-button" onclick="startDownload(this, 'QUICKAI-CMS-3.3.2.zip', 15)">Download</button>
+        <span class="timer"></span>
+      </li>
+      <li>
+        <a>QUICKAI-CMS-3.4.0.zip</a>
+        <button class="download-button" onclick="startDownload(this, 'QUICKAI-CMS-3.4.0.zip', 20)">Download</button>
+        <span class="timer"></span>
+      </li>
+      <li>
+        <a>QUICKAI-CMS-3.5.0.zip</a>
+        <button class="download-button" onclick="startDownload(this, 'QUICKAI-CMS-3.5.0.zip', 25)">Download</button>
+        <span class="timer"></span>
+      </li>
       <!-- Adicione mais itens da lista conforme necessário -->
     </ul>
   </div>
 
   <script>
+    function startDownload(button, filename, seconds) {
+      button.disabled = true;
+      var timerElement = button.nextElementSibling;
+      var count = seconds;
+
+      var intervalId = setInterval(function() {
+        timerElement.textContent = count + 's';
+        count--;
+
+        if (count < 0) {
+          clearInterval(intervalId);
+          button.disabled = false;
+          timerElement.textContent = '';
+        }
+      }, 1000);
+
+      setTimeout(function() {
+        downloadZip(filename);
+      }, seconds * 1000);
+    }
+
     function downloadZip(filename) {
       var link = document.createElement('a');
       link.href = filename;
