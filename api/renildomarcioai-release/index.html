@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Arquivos</title>
+</head>
+<body>
+  <h1>Lista de Arquivos</h1>
+
+  <ul>
+    <li><a href="QUICKAI-CMS-3.3.1.zip">QUICKAI-CMS-3.3.1.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.1.zip')">Download</button></li>
+    <li><a href="QUICKAI-CMS-3.3.2.zip">QUICKAI-CMS-3.3.2.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.2.zip')">Download</button></li>
+    <li><a href="QUICKAI-CMS-3.4.0.zip">QUICKAI-CMS-3.4.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.4.0.zip')">Download</button></li>
+    <li><a href="QUICKAI-CMS-3.5.0.zip">QUICKAI-CMS-3.5.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.5.0.zip')">Download</button></li>
+    <!-- Adicione mais itens da lista conforme necessário -->
+  </ul>
+
+  <script>
+    function downloadZip(filename) {
+      var link = document.createElement('a');
+      link.href = filename;
+      link.download = filename;
+      link.click();
+    }
+  </script>
+</body>
+</html>
