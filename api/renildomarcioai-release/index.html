@@ -82,13 +82,6 @@
       var buttons = document.getElementsByClassName("download-button");
 
       function startDownload(button) {
-        // Verifica se o adblock está ativo
-        if (typeof blockAdBlock !== 'undefined' && blockAdBlock.isActive) {
-          alert("Por favor, desative o bloqueador de anúncios para baixar o arquivo.");
-          return;
-        }
-
-        // Resto do código para iniciar o download
         button.disabled = true;
         var timerButton = button.nextElementSibling;
         var count = parseInt(button.dataset.seconds);
@@ -108,7 +101,7 @@
 
         setTimeout(function () {
           downloadZip(button.dataset.filename);
-          button.disabled = true;
+          button.disabled = true; // Desabilita o botão após o download iniciar
           timerButton.style.display = "none";
         }, count * 1000);
       }
@@ -128,39 +121,6 @@
         });
       }
     });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/blockadblock/3.2.1/blockadblock.js"></script>
-  <script>
-    // Inicializa o bloqueador de anúncios
-    var blockAdBlock = {
-      isActive: false,
-      _callbacks: [],
-
-      onDetected: function (callback) {
-        if (this.isActive) {
-          callback();
-        } else {
-          this._callbacks.push(callback);
-        }
-      },
-
-      _executeCallbacks: function () {
-        for (var i = 0; i < this._callbacks.length; i++) {
-          this._callbacks[i]();
-        }
-      }
-    };
-
-    if (typeof blockAdBlock === 'undefined') {
-      blockAdBlock = undefined;
-    }
-
-    blockAdBlock.onDetected(function () {
-      // Bloqueador de anúncios detectado
-      blockAdBlock.isActive = true;
-    });
-
-    blockAdBlock._executeCallbacks();
   </script>
 
 </head>
