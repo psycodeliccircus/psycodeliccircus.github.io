@@ -2,17 +2,76 @@
 <html>
 <head>
   <title>Lista de Arquivos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-  <h1>Lista de Arquivos</h1>
+  <div class="container">
+    <h1>Lista de Arquivos</h1>
 
-  <ul>
-    <li><a href="QUICKAI-CMS-3.3.1.zip">QUICKAI-CMS-3.3.1.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.1.zip')">Download</button></li>
-    <li><a href="QUICKAI-CMS-3.3.2.zip">QUICKAI-CMS-3.3.2.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.2.zip')">Download</button></li>
-    <li><a href="QUICKAI-CMS-3.4.0.zip">QUICKAI-CMS-3.4.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.4.0.zip')">Download</button></li>
-    <li><a href="QUICKAI-CMS-3.5.0.zip">QUICKAI-CMS-3.5.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.5.0.zip')">Download</button></li>
-    <!-- Adicione mais itens da lista conforme necessário -->
-  </ul>
+    <ul>
+      <li><a href="QUICKAI-CMS-3.3.1.zip">QUICKAI-CMS-3.3.1.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.1.zip')">Download</button></li>
+      <li><a href="QUICKAI-CMS-3.3.2.zip">QUICKAI-CMS-3.3.2.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.3.2.zip')">Download</button></li>
+      <li><a href="QUICKAI-CMS-3.4.0.zip">QUICKAI-CMS-3.4.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.4.0.zip')">Download</button></li>
+      <li><a href="QUICKAI-CMS-3.5.0.zip">QUICKAI-CMS-3.5.0.zip</a> <button onclick="downloadZip('QUICKAI-CMS-3.5.0.zip')">Download</button></li>
+      <!-- Adicione mais itens da lista conforme necessário -->
+    </ul>
+  </div>
 
   <script>
     function downloadZip(filename) {
