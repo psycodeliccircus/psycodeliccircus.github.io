@@ -64,8 +64,10 @@
       font-size: 12px;
     }
   </style>
-  <script defer>
-    var buttons = document.getElementsByClassName('download-button');
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.getElementsByClassName("download-button");
 
     function startDownload(button) {
       button.disabled = true;
@@ -73,35 +75,37 @@
       var count = parseInt(button.dataset.seconds);
 
       var intervalId = setInterval(function() {
-        timerElement.textContent = count + 's';
+        timerElement.textContent = count + "s";
         count--;
 
         if (count < 0) {
           clearInterval(intervalId);
           button.disabled = false;
-          timerElement.textContent = '';
+          timerElement.textContent = "";
         }
       }, 1000);
 
       setTimeout(function() {
         downloadZip(button.dataset.filename);
-        button.style.display = 'none'; // Esconde o botão após o download iniciar
+        button.style.display = "none"; // Esconde o botão após o download iniciar
       }, count * 1000);
     }
 
     function downloadZip(filename) {
-      var link = document.createElement('a');
+      var link = document.createElement("a");
       link.href = filename;
       link.download = filename;
       link.click();
     }
 
     for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', function() {
+      buttons[i].addEventListener("click", function() {
         startDownload(this);
       });
     }
-  </script>
+  });
+</script>
+
 </head>
 <body>
   <div class="container">
