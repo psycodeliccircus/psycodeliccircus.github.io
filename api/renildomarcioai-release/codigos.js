@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (languageTranslations && languageTranslations.hasOwnProperty(translationKey)) {
             return languageTranslations[translationKey];
         } else {
-            return translationKey; // Retorna a chave de tradução caso não exista tradução disponível
+            return translationKey;
         }
     }
 
