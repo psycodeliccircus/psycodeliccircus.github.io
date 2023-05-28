@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 function getBrowserLanguage() {
     var userLanguage = navigator.language || navigator.userLanguage;
     if (userLanguage.length > 2) {
@@ -20,7 +21,7 @@ function getTranslation(translationKey) {
     if (languageTranslations && languageTranslations.hasOwnProperty(translationKey)) {
         return languageTranslations[translationKey];
     } else {
-        return translationKey; // Retorna a chave de tradução caso não exista tradução disponível
+        return translationKey;
     }
 }
 
@@ -104,4 +105,5 @@ v350Button.addEventListener('click', function () {
         showCloseButton: true,
         showConfirmButton: false
     });
+});
 });
