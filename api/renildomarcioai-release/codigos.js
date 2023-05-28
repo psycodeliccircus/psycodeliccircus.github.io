@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function startDownload(button) {
         button.disabled = true;
+        button.style.display = "none";
         var timerButton = button.nextElementSibling;
         var count = parseInt(button.dataset.seconds);
 
