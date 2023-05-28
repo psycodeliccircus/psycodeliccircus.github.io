@@ -1,0 +1,2 @@
+var userLanguage = getBrowserLanguage();
+updateTranslations();
