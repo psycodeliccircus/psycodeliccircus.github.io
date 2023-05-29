@@ -93,3 +93,17 @@ a {
     background-color: #10a37f;
     border-radius: 3px;
 }
+
+.styled-select {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 1px 20px;
+    color: #fff;
+    background-color: #10a37f;
+    border-radius: 3px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
