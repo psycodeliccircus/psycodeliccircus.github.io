@@ -37,7 +37,7 @@ a {
 }
 
 .download-button {
-    background-color: #4CAF50;
+    background-color: #10a37f;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -51,7 +51,7 @@ a {
 }
 
 .changelog {
-    background-color: #4CAF50;
+    background-color: #585854;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -82,4 +82,14 @@ a {
     transition: background-color 0.3s ease;
     display: none;
     cursor: not-allowed;
+}
+
+#appreciated-on-content {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 8px 20px;
+    color: #fff;
+    background-color: #10a37f;
+    border-radius: 3px;
 }
