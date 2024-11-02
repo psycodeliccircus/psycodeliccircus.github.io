@@ -23,10 +23,11 @@ if (window.location.hostname === "psycodeliccircus.github.io") {
             ];
 
             const selectedApiKey = getRandomElement(apiKeys);
-            console.log(searchQuery);
-
             const urlParams = new URL(document.location).searchParams;
-            const searchQuery = urlParams.get("x");
+            const searchQuery = urlParams.get("x"); // Declare searchQuery aqui
+
+            // Agora podemos usar searchQuery
+            console.log(searchQuery); // Isso agora está após a declaração de searchQuery
 
             if (searchQuery) {
                 const requestData = {
