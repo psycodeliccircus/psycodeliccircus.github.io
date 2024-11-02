@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+/*
+	------------------------------
+	Changes to the Materialize CSS
+	------------------------------
+*/
+
+*::-webkit-scrollbar {
+    display:none;
+}
+
+
+.collection-item{
+	height: 160px;
+	overflow: hidden;
+	
+
+}
+
+.uguroynat {
+	display:none;
+	position: fixed;
+	top: 0vh;
+	background: black;
+	width: -webkit-fill-available;
+	height: 450px;
+	left: 0;
+}
+
+
+.uguroynat h1 {
+    font-size: 12px;
+    position: relative;
+    margin: 0;
+    margin-left: 3px;
+    margin-bottom: 5px;
+}
+
+.uguroynat p {
+    margin: 0;
+    position: relative;
+    margin-top: 10px;
+    font-size: 9px;
+    margin-left: 1vh;
+}
+.uguroynat span {
+    position: relative;
+    font-size: 9px;
+    text-align: center;
+    display: block;
+    margin-top: 0px;
+}
+
+.uguroynat a {
+    display: block;
+    text-align: center;
+    width: -webkit-fill-available;
+    margin-top: 10px;
+    background: #484848;
+    color: #b3b3b3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.collection{
+    width: -webkit-fill-available;
+    position: relative;
+    top: 2vh;
+    margin-right: 1px;
+    margin-left: 1px;
+    padding-right: 5px;
+}
+
+.collection::-webkit-scrollbar {
+    width: .7vh;
+}
+
+.collection .collection-item{
+	padding: 10px;
+	    position: relative;
+}
+
+.btn{
+	background: #f44336;
+}
+
+.btn:hover{
+	background: #ff8a80;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+	border-bottom: 1px solid #f44336;
+	box-shadow: 0 2px 0 0 #f44336;
+}
+
+/*
+	----------
+	Custom CSS
+	----------
+*/
+
+
+#results{
+	display: none;
+}
+
+/*Video thumbnail
+w - 320
+h - 180
+*/
+.image-container{
+	float: left;
+	position: relative;
+}
+
+/*Video thumbnail*/
+.image{
+	position: absolute;
+	width: 180px;
+}
+
+.video-info-container{
+    position: absolute;
+    right: 4%;
+    font-size: 3vh;
+    top: 10vh;
+    margin: 0;
+    text-align: left;
+    width: 58%;
+}
+
+/*Video Title*/
+.title{
+}
+
+
+@media only screen and (min-width: 300px) {
+	
+.image {
+     
+width: 269px!important;
+     
+height: 146px;
+}
+
+.uguroynat {
+	height: -webkit-fill-available!important;
+}
+
+
+#ytframe { width:300px!important; margin-top: 45px; }
+
+
+.row {
+	margin-top:15px!important; 
+}
+
+
+}
