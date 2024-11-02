@@ -38,9 +38,15 @@ if (window.location.hostname === "psycodeliccircus.github.io") {
                     key: selectedApiKey
                 };
 
-                $.get(youtubeSearchEndpoint, requestData, function (response) {
-                    $.post("https://fdev-carcontrol/catchSearch", JSON.stringify(response.items));
-                });
+                // Chamada à API do YouTube
+                $.get(youtubeSearchEndpoint, requestData)
+                    .done(function (response) {
+                        // Enviando os itens recebidos para outro endpoint
+                        $.post("https://fdev-carcontrol/catchSearch", JSON.stringify(response.items));
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        console.error("Error fetching data: " + textStatus, errorThrown);
+                    });
             }
         })();
     });
