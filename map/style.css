@@ -1,0 +1,19 @@
+
+body {
+    background: #153e6a;
+    margin: 0;
+}
+#map { 
+    position:absolute;
+    height: 100%; 
+    width: 100%;
+    background: #153e6a;
+    border: 0;
+    /* filter: saturate(0%) brightness(50%) ; */
+ }
+
+.leaflet-tile-container {
+    filter: saturate(0%) brightness(50%) ;
+}
+
+.leaflet-control-zoom, .leaflet-control-attribution   {display: none;}
